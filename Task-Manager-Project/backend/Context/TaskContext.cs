@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-namespace bTask_Manager_Project.Context
+namespace Task_Manager_Project.Context
 {
     public class TaskContext : DbContext
     {
