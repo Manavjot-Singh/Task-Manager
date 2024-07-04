@@ -1,4 +1,4 @@
-namespace Models
+namespace Task_Manager_Project.Models
 {
     public class Rewards
     {

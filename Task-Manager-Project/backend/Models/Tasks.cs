@@ -1,4 +1,4 @@
-namespace Models
+namespace Task_Manager_Project.Models
 {
     public class Tasks
     {
@@ -9,6 +9,6 @@ namespace Models
         public string? TaskPriority {get;set;}
         public string? TaskStartDate {get;set;}
         public string? TaskEndDate {get;set;}
-        
+
     }
 }
