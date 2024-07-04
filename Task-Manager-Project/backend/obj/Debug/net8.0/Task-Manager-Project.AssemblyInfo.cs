@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Task-Manager-Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6082fbc914ee79651d4428ee6b81e9d1da9e022")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45de191514faed80a09cabf8634fcaa66147d2c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Task-Manager-Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Task-Manager-Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
