@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 if (builder.Environment.IsDevelopment())
 {
         builder.Services.AddDbContext<TaskContext>(options =>
-        options.UseSqlServer("Server=ASUS2705\\SQLEXPRESS;Database=TaskManager;Trusted_Connection=True;TrustCertificate=True;"));
+        options.UseSqlServer("Server=ASUS2705\\SQLEXPRESS;Database=TaskManager;Trusted_Connection=True;TrustServerCertificate=True;"));
 
 }
 
