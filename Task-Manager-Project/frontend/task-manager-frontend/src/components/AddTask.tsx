@@ -15,7 +15,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onTaskAdded }) => {
       .then(response => {
         console.log('Task added:', response.data);
         setTitle('');
-        onTaskAdded(); // Call the callback to refresh the task list
+        onTaskAdded(); 
       })
       .catch(error => {
         console.error('There was an error adding the task!', error);
