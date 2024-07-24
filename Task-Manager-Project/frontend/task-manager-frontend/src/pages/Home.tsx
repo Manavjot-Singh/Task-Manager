@@ -7,6 +7,7 @@ export default function Home() {
             <AddTask onTaskAdded={() => {}} />
             <h1>Home</h1>
             
+            
         </div>
 
     )

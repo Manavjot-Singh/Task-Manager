@@ -1,10 +1,11 @@
-import AddTask from "../components/AddTask";
+import TaskList from "../components/TaskList";
+import AddTask from "../components/TaskList";
 
 
 export default function About() {
     return(
         <div>
-            <AddTask onTaskAdded={() => {}} />
+            <TaskList refresh={true} />
             <h1>About</h1>
             
         </div>

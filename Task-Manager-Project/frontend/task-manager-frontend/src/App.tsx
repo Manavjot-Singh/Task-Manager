@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Container, Title } from '@mantine/core';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import About from './pages/About';
+import Navbar from './components/Header/Navbar'; // Corrected import statement
 
 const App: React.FC = () => {
   const [refresh, setRefresh] = useState(false);
@@ -15,16 +16,13 @@ const App: React.FC = () => {
 
   return (
     <Container size="sm">
-      <BrowserRouter>
+      <div className='App'>
+        <Navbar />
         <Routes>
-          <Route index element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route element={<About />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/About' element={<About />} />
         </Routes>
-      </BrowserRouter>
-      <Title mb="lg">Task Manager</Title>
-      <AddTask onTaskAdded={handleTaskAdded} />
-      <TaskList refresh={refresh} />
+      </div>
     </Container>
   );
 };
