@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import api from '../services/api';
+import { Card, List, Text, Checkbox, Group } from '@mantine/core';
+import axios from 'axios'; 
 
 interface Task {
   id: number;
@@ -7,26 +8,37 @@ interface Task {
   completed: boolean;
 }
 
-const TaskList: React.FC = () => {
+interface TaskListProps {
+  refresh: boolean;
+}
+
+const TaskList: React.FC<TaskListProps> = ({ refresh }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    api.get('/tasks')
-      .then(response => setTasks(response.data))
-      .catch(error => console.error('Error fetching tasks:', error));
-  }, []);
+    axios.get('/tasks')
+      .then(response => {
+        setTasks(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the tasks!', error);
+      });
+  }, [refresh]);
 
   return (
-    <div>
-      <h1>Task List</h1>
-      <ul>
+    <Card shadow="sm" padding="lg">
+      <Text size="lg" mb="md">Task List</Text>
+      <List>
         {tasks.map(task => (
-          <li key={task.id}>
-            {task.title} {task.completed ? '(Completed)' : ''}
-          </li>
+          <List.Item key={task.id}>
+            <Group>
+              <Text>{task.title}</Text>
+              <Checkbox checked={task.completed} />
+            </Group>
+          </List.Item>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Card>
   );
 };
 
